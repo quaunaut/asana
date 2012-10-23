@@ -18,8 +18,8 @@ A work in progress. Working so far:
 - create_task
 - update_task
 - create_project
-- update_project*
-- update_workspace*
+- update_project
+- update_workspace
 - add_project_task
 - rm_project_task
 - add_story

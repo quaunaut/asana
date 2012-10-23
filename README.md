@@ -1,18 +1,18 @@
-# Asana python api & CLI
-https://github.com/pandemicsyn/asana/
+# Asana python api 
 
-python wrapper for the [Asana API](http://asana.com) and a sample CLI tool for [Asana](http://asana.com) itself.
+python wrapper for the [Asana API](http://asana.com)
 
-A work in progress. Working so far:
+Documentation is available at: [AsanaAPI](http://asana.readthedocs.org/en/latest/index.html)
+This project is a work in progress. Here's what's currently available:
 
-- get_user_info
-- list_users
-- list_tasks
-- get_task
-- list_projects
+- add_project_task
+- add_story
+- add_tag_task
+- create_project
+- create_task
+- get_basic_auth
 - get_project
 - get_project_tasks
-- list_stories
 - get_story
 - list_workspaces
 - create_task
@@ -25,24 +25,34 @@ A work in progress. Working so far:
 - add_story
 - get_tags
 - get_tag_tasks
-- add_tag_task
-- add_project_to_task
+- get_task
+- list_projects
+- list_stories
+- list_tasks
+- list_users
+- list_workspaces
+- rm_project_task
+- update_project
+- update_task
+- update_workspace
+- user_info
 
 Todo:
 
 - All the things!
-- Especially error and response checkings.
+- unittests
+- Better error handling
 
 Sample:
 
-    import asana
+    from asana import asana
     asana_api = asana.AsanaAPI('YourAsanaAPIKey', debug=True)
 
     # see your workspaces
     myspaces = asana_api.list_workspaces()  #Result: [{u'id': 123456789, u'name': u'asanapy'}]
 
     # create a new project
-    asana_api.create_project('test project', 'notes for test project', myspaces[0]['id'])
+    asana_api.create_project('test project', myspaces[0]['id'])
 
     # create a new task
     asana_api.create_task('yetanotherapitest', myspaces[0]['id'], assignee_status='later', notes='some notes')
